@@ -14,7 +14,51 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage/homepage');
+    return view('homepage/homepage', [
+        'highlighted_rooms' => [
+            [
+                'room_name'=> 'King Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-6.jpg',
+            ],
+            [
+                'room_name'=> 'Suite Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-1.jpg',
+            ],
+            [
+                'room_name'=> 'Family Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-2.jpg',
+            ],
+            [
+                'room_name'=> 'Deluxe Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-3.jpg',
+            ]
+        ],
+        'instagram_pictures' => [
+            [
+                'insta_picture'=> 'images/insta-1.jpg',
+            ],
+            [
+                'insta_picture'=> 'images/insta-2.jpg',
+            ],
+            [
+                'insta_picture'=> 'images/insta-3.jpg',
+            ],
+            [
+                'insta_picture'=> 'images/insta-4.jpg',
+            ],
+            [
+                'insta_picture'=> 'images/insta-5.jpg',
+            ],
+        ]
+    ]);
 });
 
 Route::get('/rooms', function () {
@@ -36,3 +80,11 @@ Route::get('/restaurant', function () {
 Route::get('/about', function () {
     return view('aboutpage/about');
 });
+
+Route::get('/room_detail', function () {
+    return view('roomspage/rooms-single');
+});
+
+// Route::get('/room-detail/{name}', function () {
+//     return view('roompage/rooms-single');
+// });
