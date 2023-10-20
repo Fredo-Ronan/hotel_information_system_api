@@ -62,7 +62,46 @@ Route::get('/', function () {
 });
 
 Route::get('/rooms', function () {
-    return view('roomspage/rooms');
+    return view('roomspage/rooms', [
+        'rooms'=> [
+            [
+                'room_name'=> 'King Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-6.jpg',
+            ],
+            [
+                'room_name'=> 'Suite Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-1.jpg',
+            ],
+            [
+                'room_name'=> 'Family Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-2.jpg',
+            ],
+            [
+                'room_name'=> 'Deluxe Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture' => 'images/room-3.jpg',
+            ],
+            [
+                'room_name'=> 'Luxury Room',
+                'price'=> 120,
+                'stars'=> '5',
+                'picture'=> 'images/room-4.jpg',
+            ],
+            [
+                'room_name'=> 'Superior Room',
+                'price' => 120,
+                'stars' => '5',
+                'picture' => 'images/room-5.jpg',
+            ]
+        ]
+    ]);
 });
 
 Route::get('/contact', function () {
@@ -81,10 +120,30 @@ Route::get('/about', function () {
     return view('aboutpage/about');
 });
 
-Route::get('/room_detail', function () {
-    return view('roomspage/rooms-single');
+// Route detail per kamar hotelnya
+Route::get('/King Room', function () {
+    return view('roomspage/king-room');
 });
 
+Route::get('/Suite Room', function () {
+    return view('roomspage/suite-room');
+});
+
+Route::get('/Family Room', function () {
+    return view('roomspage/family-room');
+});
+
+Route::get('/Deluxe Room', function () {
+    return view('roomspage/deluxe-room');
+});
+
+Route::get('/Luxury Room', function () {
+    return view('roomspage/luxury-room');
+});
+
+Route::get('/Superior Room', function () {
+    return view('roomspage/superior-room');
+});
 // Route::get('/room-detail/{name}', function () {
 //     return view('roompage/rooms-single');
 // });

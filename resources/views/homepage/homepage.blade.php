@@ -358,7 +358,7 @@
                                     View Details 
                                     <span class="icon-long-arrow-right"></span>
                                 </a> -->
-                                <a href="{{ url('/room_detail') }}" class="btn-custom px-3 py-2 rounded">
+                                <a href="/{{$room['room_name']}}" class="btn-custom px-3 py-2 rounded">
                                     View Details 
                                     <span class="icon-long-arrow-right"></span>
                                 </a>
