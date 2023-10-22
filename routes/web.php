@@ -104,6 +104,15 @@ Route::get('/rooms', function () {
     ]);
 });
 
+
+Route::get('/login', function () {
+    return view('loginpage/login');
+});
+
+Route::get('/register', function () {
+    return view('registerpage/register');
+});
+
 Route::get('/contact', function () {
     return view('contactpage/contact');
 });

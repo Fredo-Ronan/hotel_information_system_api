@@ -8,6 +8,8 @@
     <li class="nav-item"><a href="{{ url('/about') }}" class="nav-link">About Us</a></li>
     <li class="nav-item"><a href="{{ url('/blog') }}" class="nav-link">Blog</a></li>
     <li class="nav-item"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
+    <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
+    <li class="nav-item"><a href="{{ url('/register') }}" class="nav-link">Register</a></li>
 </ul>
 @endsection
 
