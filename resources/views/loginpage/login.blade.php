@@ -24,44 +24,38 @@
 
   .text-white {
     color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+  .form-ngisi {
+        border-radius: 20px; /* Sesuaikan dengan radius yang Anda inginkan */
+        padding: 10px; /* Untuk memberi ruang agar input lebih terlihat bulat */
+        border: 1px solid #ccc; /* Atur border sesuai kebutuhan Anda */
+        width: 100%; /* Atur lebar sesuai kebutuhan Anda */
+        box-sizing: border-box;
   }
 
-  .form-control {
-    background: transparent !important;
-    border: none;
-    height: 50px;
-    color: rgba(255, 255, 255, 1) !important;
-    border: 1px solid transparent;
-    border-radius: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  .customm-button {
+        background-color: lightblue;
+        border: 2000px;
+        border-radius: 2000px;
+        padding: 10px 155px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
-  .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.8) !important;
-  }
-
-  .form-control:hover,
-  .form-control:focus {
-    background: rgba(255, 255, 255, 0.08) !important;
-    outline: none;
-    box-shadow: none;
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  .form-control:focus {
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  textarea.form-control {
-    height: inherit !important;
-  }
+    .custom-button.bttn.bttn-lg {
+        padding: 20px 40px; 
+        font-size: 20px;
+    }
 </style>
 
 @section('nav')
 <ul class="navbar-nav ml-auto">
     <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-    <li class="nav-item"><a href "{{ url('/rooms') }}" class="nav-link">Our Rooms</a></li>
+    <li class="nav-item"><a href="{{ url('/rooms') }}" class="nav-link">Our Rooms</a></li>
     <li class="nav-item"><a href="{{ url('/restaurant') }}" class="nav-link">Restaurant</a></li>
     <li class="nav-item"><a href="{{ url('/about') }}" class="nav-link">About Us</a></li>
     <li class="nav-item"><a href="{{ url('/blog') }}" class="nav-link">Blog</a></li>
@@ -75,17 +69,22 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card-body p-5 text-center">
           <div class="mb-md-5 mt-md-4 pb-5">
-            <p class="textheader-white mb-5">Have an account?</p>
+          <div>
+              <p class="mb-0 text-white">Don't have an account? <a href="#!" class="text-blue fw-bold">Register</a></p>
+            </div>
+            <h2 style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Login</h2>
 
             <form action="#" class="signin-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Email" required>
+                <input type="text" class="form-ngisi" placeholder="Email" required>
               </div>
 
               <div class="form-group">
-                <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+                <input id="password-field" type="password" class="form-ngisi" placeholder="Password" required>
                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
               </div>
+
+              <button class="customm-button bttn bttn-lg" type="submit">Login</button>
 
               <div class="form-group d-md-flex">
                 <div class="w-50">
@@ -99,18 +98,12 @@
                 </div>
               </div>
 
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-
               <div class="d-flex justify-content-center text-center mt-4 pt-1">
                 <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
                 <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
                 <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
               </div>
             </form>
-
-            <div>
-              <p class="mb-0 text-white">Don't have an account? <a href="#!" class="text-blue-50 fw-bold">Register</a></p>
-            </div>
           </div>
         </div>
       </div>
