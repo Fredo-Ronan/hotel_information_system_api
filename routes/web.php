@@ -129,7 +129,7 @@ Route::get('/about', function () {
     return view('aboutpage/about');
 });
 
-// Route detail per kamar hotelnya
+// Route detail per kamar hotelnyaa
 Route::get('/King Room', function () {
     return view('roomspage/king-room');
 });

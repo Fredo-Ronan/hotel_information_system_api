@@ -18,7 +18,7 @@
   }
 
   .card-body {
-    background: linear-gradient(to bottom, #87CEEB, #ADD8E6); /* Gradient colors for the card body */
+    background: linear-gradient(to bottom, #87CEEB, #ADD8E6); 
 
   }
 </style>
