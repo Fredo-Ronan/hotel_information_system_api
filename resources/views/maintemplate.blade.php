@@ -25,21 +25,59 @@
 	<link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	@yield('body-style')
+
+	<style>
+
+		/* .navbar-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		} */
+
+		.ftco-navbar-light {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.navbar-style {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.navbar-collapse {
+			flex-grow: 0;
+		}
+
+		@media screen and (max-width: 992px) {
+			.login-signup-btn-container {
+				display: none;
+			}
+		}
+	</style>
 </head>
 
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">The <span>5 Stars</span> Hotel</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+		<a class="navbar-brand" href="index.html">The <span>5 Stars</span> Hotel</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+			aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="oi oi-menu"></span> Menu
+		</button>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				@yield('nav')
-			</div>
+		<div class="collapse navbar-collapse" id="ftco-nav">
+			@yield('nav')
+		</div>
+
+		<div class="login-signup-btn-container">
+			<a href="{{ url('/login') }}">
+				<button class="btn btn-light" style="border-radius: 10px;">Login</button>
+			</a>
+			<a href="{{ url('signup') }}">
+				<button class="btn btn-success" style="border-radius: 10px;">Sign Up</button>
+			</a>
 		</div>
 	</nav>
 	<!-- END nav -->
@@ -51,6 +89,7 @@
 		@yield('contact-content')
 		@yield('blog-content')
 		@yield('room-detail')
+		@yield('register')
 	</div>
 
 	<footer class="ftco-footer ftco-section img" style="background-image: url(images/bg_4.jpg);">
