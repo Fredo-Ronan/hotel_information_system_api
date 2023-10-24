@@ -67,7 +67,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<a class="navbar-brand" href="index.html">The <span>5 Stars</span> Hotel</a>
+		<a class="navbar-brand" href="{{ url('/') }}">The <span>5 Stars</span> Hotel</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 			aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="oi oi-menu"></span> Menu
@@ -97,6 +97,7 @@
 		@yield('room-detail')
 		@yield('register')
 		@yield('login')
+		@yield('booking')
 	</div>
 
 	<footer class="ftco-footer ftco-section img" style="background-image: url(images/bg_4.jpg);">

@@ -140,30 +140,13 @@ Route::get('/about', function () {
     return view('aboutpage/about');
 });
 
-// Route detail per kamar hotelnyaa
-Route::get('/King Room', function () {
-    return view('roomspage/king-room');
+Route::get('/room_detail', function () {
+    return view('roomspage/rooms-single');
 });
 
-Route::get('/Suite Room', function () {
-    return view('roomspage/suite-room');
+Route::get('/bookingpage/checkout', function () {
+    return view('bookingpage/checkout');
 });
-
-Route::get('/Family Room', function () {
-    return view('roomspage/family-room');
+Route::get('/pembayaran/detail', function () {
+    return view('pembayaran/detail');
 });
-
-Route::get('/Deluxe Room', function () {
-    return view('roomspage/deluxe-room');
-});
-
-Route::get('/Luxury Room', function () {
-    return view('roomspage/luxury-room');
-});
-
-Route::get('/Superior Room', function () {
-    return view('roomspage/superior-room');
-});
-// Route::get('/room-detail/{name}', function () {
-//     return view('roompage/rooms-single');
-// });

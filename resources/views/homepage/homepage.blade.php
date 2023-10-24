@@ -64,6 +64,34 @@
     .size-facility {
         width: 12rem;
     }
+    
+    .card-img-top {
+        transition: all .5s;
+        background-color: black;
+    }
+
+    .card-img-top:hover {
+        opacity: 0.5;
+    }
+
+    .card-img-top:hover + .show-view {
+        display: block;
+    }
+
+    .view-details-btn {
+        position: absolute;
+        top: 5rem;
+        left: 4rem;
+        right: 4rem;
+        bottom: 14rem;
+        display: none;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+
+    .view-details-btn:hover {
+        display: block;
+    }
 </style>
 
 <div class="hero">
@@ -198,26 +226,31 @@
     <div class="card-container-wrapper">
         <div class="card-container">
             @foreach($highlighted_rooms as $index=>$room)
-            <div class="card ftco-animate" style="width: 20rem;">
-                <img src="{{$room['picture']}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $room['room_name'] }}</h5>
-                    <div class="detail">
-                        <p class="card-text">
-                            ${{ $room['price'] }} per night
-                        </p>
-
-                        <div style="display: flex;">
-                            @for($j = 0; $j < $room['stars']; $j++)
-                            <span class="ion-ios-star" style="color: #fbbb00;"></span>
-                            @endfor
-
-                            <p style="margin-left: 0.5rem;">{{ $room['stars'] }}</p>
-                        </div>
+            <a href="{{ url('/room_detail') }}">
+                <div class="card ftco-animate" style="width: 20rem; height: 100%;">
+                    <div>
+                        <img src="{{$room['picture']}}" class="card-img-top" alt="">
+                        <button class="btn btn-light view-details-btn show-view">View Details</button>
                     </div>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $room['room_name'] }}</h5>
+                        <div class="detail">
+                            <p class="card-text">
+                                ${{ $room['price'] }} per night
+                            </p>
+    
+                            <div style="display: flex;">
+                                @for($j = 0; $j < $room['stars']; $j++)
+                                <span class="ion-ios-star" style="color: #fbbb00;"></span>
+                                @endfor
+    
+                                <p style="margin-left: 0.5rem;">{{ $room['stars'] }}</p>
+                            </div>
+                        </div>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
                 </div>
-            </div>
+            </a>
             @endforeach
         </div>
     </div>
