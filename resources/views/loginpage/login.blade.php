@@ -116,7 +116,7 @@
 <div class="container py-5 h-100" style="position: relative;">
   <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="margin-top: 2rem; margin-bottom: 2rem;">
-      <div class="card-body text-center" style="background-color: rgba(153, 151, 151, 0.75); border-radius: 10px; margin-top: 3rem;">
+      <div class="card-body text-center" style="border-radius: 10px; margin-top: 3rem;">
         <div class="mb-md-5 mt-md-4">
           <h2
             style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
