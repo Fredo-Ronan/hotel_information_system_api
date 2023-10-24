@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
 
 	<link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -38,6 +39,7 @@
 		.ftco-navbar-light {
 			display: flex;
 			justify-content: space-around;
+			position: absolute;
 		}
 
 		.navbar-style {
@@ -48,6 +50,10 @@
 
 		.navbar-collapse {
 			flex-grow: 0;
+		}
+
+		.navbar-brand {
+			margin-right: 0;
 		}
 
 		@media screen and (max-width: 992px) {
@@ -67,7 +73,7 @@
 			<span class="oi oi-menu"></span> Menu
 		</button>
 
-		<div class="collapse navbar-collapse" id="ftco-nav">
+		<div class="collapse navbar-collapse" id="ftco-nav" style="margin-right: 3rem;">
 			@yield('nav')
 		</div>
 
@@ -90,6 +96,7 @@
 		@yield('blog-content')
 		@yield('room-detail')
 		@yield('register')
+		@yield('login')
 	</div>
 
 	<footer class="ftco-footer ftco-section img" style="background-image: url(images/bg_4.jpg);">

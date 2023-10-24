@@ -121,7 +121,7 @@
 @section('register')
 <div class="h-100 h-custom gradient-custom-2 registration-section"></div>
 <div class="container py-5 h-100" style="position: relative;">
-  <div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100 mt-5">
     <div class="col-md-6">
       <h2
         style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">

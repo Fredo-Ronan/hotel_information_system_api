@@ -7,10 +7,15 @@
   }
 
   .background-slider {
-    position: relative;
-    background: url('images/bg_1.jpg') no-repeat center center fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/bg_1.jpg');
     background-size: cover;
     transition: background-image 1s ease-in-out;
+    opacity: 0.5;
   }
 
   .background-slider.bg2 {
@@ -25,31 +30,61 @@
   .text-white {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+  }
 
+  .form-ngisi:hover, .form-ngisi:focus {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  ::-webkit-input-placeholder {
+    color: white;
+  }
 
   .form-ngisi {
-        border-radius: 20px; /* Sesuaikan dengan radius yang Anda inginkan */
-        padding: 10px; /* Untuk memberi ruang agar input lebih terlihat bulat */
-        border: 1px solid #ccc; /* Atur border sesuai kebutuhan Anda */
-        width: 100%; /* Atur lebar sesuai kebutuhan Anda */
-        box-sizing: border-box;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    margin-bottom:24px;
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    transition: .3s ease-in-out;
+    padding-left:10px;
+    color: white;
+  }
+
+  .form-group{
+    position: relative;
+  }
+
+  .form-group .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Adjust this value as needed */
+    transform: translateY(-110%);
+    cursor: pointer;
+    color: white;
   }
 
   .customm-button {
-        background-color: lightblue;
-        border: 2000px;
-        border-radius: 2000px;
-        padding: 10px 155px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
+    background-color: #1377b0;
+    width: 100%;
+    border: none;
+    border-radius: 2000px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
 
-    .custom-button.bttn.bttn-lg {
-        padding: 20px 40px; 
-        font-size: 20px;
-    }
+  .customm-button:hover {
+    cursor: pointer;
+    background-color: #0c5985;
+  }
 </style>
 
 @section('nav')
@@ -63,53 +98,67 @@
 </ul>
 @endsection
 
-<section class="vh-100 gradient-custom background-slider">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card-body p-5 text-center">
-          <div class="mb-md-5 mt-md-4 pb-5">
-          <div>
-              <p class="mb-0 text-white">Don't have an account? <a href="#!" class="text-blue fw-bold">Register</a></p>
+@section('body-style')
+<style>
+  body {
+    background-color: black;
+  }
+</style>
+@endsection
+
+@section('login')
+<div class="vh-100 gradient-custom background-slider"></div>
+<div class="container py-5 h-100" style="position: relative;">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="margin-top: 2rem; margin-bottom: 2rem;">
+      <div class="card-body text-center">
+        <div class="mb-md-5 mt-md-4 pb-5">
+          <h2
+            style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+            Login</h2>
+
+          <form action="#" class="signin-form">
+            <div class="form-group">
+              <input type="text" class="form-ngisi" placeholder="Email" required>
             </div>
-            <h2 style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Login</h2>
 
-            <form action="#" class="signin-form">
-              <div class="form-group">
-                <input type="text" class="form-ngisi" placeholder="Email" required>
+            <div class="form-group">
+              <input id="password-field" type="password" class="form-ngisi" placeholder="Password" required>
+              <i toggle="#password-field" class="bi bi-eye-slash toggle-password" id="eye-toggle-password"></i>
+            </div>
+
+            <button class="customm-button" type="submit">Login</button>
+
+            <div class="form-group" style="display: flex; justify-content: space-between;">
+              <div class="">
+                <label class="checkbox-wrap checkbox-primary text-white">Remember Me
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
               </div>
-
-              <div class="form-group">
-                <input id="password-field" type="password" class="form-ngisi" placeholder="Password" required>
-                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+              <div class="text-md-right">
+                <a href="#!" class="text-white">Forgot Password</a>
               </div>
+            </div>
 
-              <button class="customm-button bttn bttn-lg" type="submit">Login</button>
+            <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
+              <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+              <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+            </div> -->
+          </form>
 
-              <div class="form-group d-md-flex">
-                <div class="w-50">
-                  <label class="checkbox-wrap checkbox-primary text-white">Remember Me
-                    <input type="checkbox" checked>
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="w-50 text-md-right">
-                  <a href="#!" class="text-white">Forgot Password</a>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-              </div>
-            </form>
+          <div>
+            <p class="mb-0 text-white">
+              Don't have an account?
+              <a href="#!" class="text-blue fw-bold">Register</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <script>
   const backgroundSlider = document.querySelector('.background-slider');
@@ -124,4 +173,17 @@
       currentBg = 1;
     }
   }, 10000);
+
+
+  const togglePassword = document.getElementById('eye-toggle-password');
+  const passwordField = document.getElementById('password-field');
+
+  togglePassword.addEventListener('click', () => {
+    const type = passwordField.getAttribute('type') === "password" ? "text" : "password";
+
+    passwordField.setAttribute('type', type);
+
+    togglePassword.classList.toggle('bi-eye');
+  });
 </script>
+@endsection
