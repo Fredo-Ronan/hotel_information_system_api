@@ -32,6 +32,10 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
+  .text-green {
+    color: greenyellow;
+  }
+
   .form-ngisi:hover, .form-ngisi:focus {
     background: rgba(255, 255, 255, 0.25);
   }
@@ -70,7 +74,7 @@
   }
 
   .customm-button {
-    background-color: #1377b0;
+    background-color: #21cc7a;
     width: 100%;
     border: none;
     border-radius: 2000px;
@@ -79,11 +83,12 @@
     color: white;
     font-size: 20px;
     transition: all 0.3s;
+    box-shadow: 3px 8px 6px -3px rgba(0,0,0,0.1);
   }
 
   .customm-button:hover {
     cursor: pointer;
-    background-color: #0c5985;
+    background-color: #13804c;
   }
 </style>
 
@@ -111,8 +116,8 @@
 <div class="container py-5 h-100" style="position: relative;">
   <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="margin-top: 2rem; margin-bottom: 2rem;">
-      <div class="card-body text-center">
-        <div class="mb-md-5 mt-md-4 pb-5">
+      <div class="card-body text-center" style="background-color: rgba(153, 151, 151, 0.75); border-radius: 10px; margin-top: 3rem;">
+        <div class="mb-md-5 mt-md-4">
           <h2
             style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
             Login</h2>
@@ -151,7 +156,7 @@
           <div>
             <p class="mb-0 text-white">
               Don't have an account?
-              <a href="#!" class="text-blue fw-bold">Register</a>
+              <a href="{{ url('/signup') }}" class="text-green fw-bold">Register</a>
             </p>
           </div>
         </div>

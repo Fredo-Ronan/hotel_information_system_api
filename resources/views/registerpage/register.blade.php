@@ -25,7 +25,7 @@
   }
 
   .customm-button {
-    background-color: #1377b0;
+    background-color: #21cc7a;
     width: 100%;
     border: none;
     border-radius: 2000px;
@@ -38,7 +38,7 @@
 
   .customm-button:hover {
     cursor: pointer;
-    background-color: #0c5985;
+    background-color: #13804c;
   }
 
   .login-btn-container {
@@ -121,10 +121,10 @@
 @section('register')
 <div class="h-100 h-custom gradient-custom-2 registration-section"></div>
 <div class="container py-5 h-100" style="position: relative;">
-  <div class="row d-flex justify-content-center align-items-center h-100 mt-5">
-    <div class="col-md-6">
+  <div class="row d-flex justify-content-center align-items-center h-100 mt-4">
+    <div class="col-md-6" style="padding: 2rem; background-color: rgba(153, 151, 151, 0.75); border-radius: 10px; margin-top: 1rem;">
       <h2
-        style="color: white; font-size: 30px; text-align: center; padding: 10px 0 30px 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+        style="color: white; font-size: 30px; text-align: center; padding-bottom: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
         Sign Up</h2>
       <div class="two-forms">
         <input type="text" class="inputt-box" id="inputan-field" placeholder="Firstname" style="padding-right: 10px;" />
