@@ -33,30 +33,41 @@ Route::get('/', function () {
                 'price'=> 120,
                 'stars'=> '5',
                 'picture' => 'images/room-2.jpg',
-            ],
-            [
-                'room_name'=> 'Deluxe Room',
-                'price'=> 120,
-                'stars'=> '5',
-                'picture' => 'images/room-3.jpg',
             ]
         ],
-        'instagram_pictures' => [
+        'facilities' => [
             [
-                'insta_picture'=> 'images/insta-1.jpg',
+                'image_path' => 'images/facilities_icons/workspace icon.png',
+                'facility_name' => 'Private Workspace'
             ],
             [
-                'insta_picture'=> 'images/insta-2.jpg',
+                'image_path' => 'images/facilities_icons/parking icon.png',
+                'facility_name' => 'Parking Area'
             ],
             [
-                'insta_picture'=> 'images/insta-3.jpg',
+                'image_path' => 'images/facilities_icons/breakfast icon.png',
+                'facility_name' => 'Breakfast'
             ],
             [
-                'insta_picture'=> 'images/insta-4.jpg',
+                'image_path' => 'images/facilities_icons/wifi icon.png',
+                'facility_name' => 'Free Wifi'
             ],
             [
-                'insta_picture'=> 'images/insta-5.jpg',
+                'image_path' => 'images/facilities_icons/electricity.png',
+                'facility_name' => 'Free Electricy'
             ],
+            [
+                'image_path' => 'images/facilities_icons/swimming pool icon.png',
+                'facility_name' => 'Swimming Pool'
+            ],
+            [
+                'image_path' => 'images/facilities_icons/gyms icon.png',
+                'facility_name' => 'Exercise Space'
+            ],
+            [
+                'image_path' => 'images/facilities_icons/other service icon.png',
+                'facility_name' => 'Other Services'
+            ]
         ]
     ]);
 });
