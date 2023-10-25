@@ -32,7 +32,7 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     transition: all 0.3s;
   }
 
@@ -74,6 +74,7 @@
     transition: .3s ease-in-out;
     padding-left:10px;
     color: white;
+    padding-left: 1.5rem;
   }
 
   .submitt {
@@ -94,8 +95,28 @@
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
   }
-  
 
+  .toggle-password {
+    position: absolute;
+    top: 76.5%;
+    right: 52px; /* Adjust this value as needed */
+    transform: translateY(-110%);
+    cursor: pointer;
+    color: white;
+  }
+  
+  /* Hiding the arrow icon on number input */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
 </style>
 
 @section('nav')
@@ -129,7 +150,7 @@
       <div class="two-forms">
         <input type="text" class="inputt-box" id="inputan-field" placeholder="Firstname" style="padding-right: 10px;" />
 
-        <input type="text" class="inputt-box" id="inputan-field" placeholder="Lastname" style="padding-left: 10px;" />
+        <input type="text" class="inputt-box" id="inputan-field" placeholder="Lastname" style="padding-left: 1.5rem;" />
 
       </div>
 
@@ -138,7 +159,7 @@
       </div>
 
       <div class="form-outline">
-        <input type="text" class="inputt-box" id="noTelp-field" placeholder="Nomor Telepon" />
+        <input type="number" class="inputt-box" id="noTelp-field" placeholder="Nomor Telepon" />
       </div>
 
       <div class="form-outline">
@@ -146,15 +167,31 @@
       </div>
 
       <div class="form-outline">
-        <input type="text" class="inputt-box" id="password-field" placeholder="Password" />
+        <input type="password" class="inputt-box" id="password-field" placeholder="Password" />
+        <i toggle="#password-field" class="bi bi-eye-slash toggle-password" id="eye-toggle-password"></i>
       </div>
 
       <div class="login-btn-container">
-        <button class="customm-button" type="submit">Sign Up</button>
+        <a href="{{ url('/login') }}">
+          <button class="customm-button" type="submit">Sign Up</button>
+        </a>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  const togglePassword = document.getElementById('eye-toggle-password');
+  const passwordField = document.getElementById('password-field');
+
+  togglePassword.addEventListener('click', () => {
+    const type = passwordField.getAttribute('type') === "password" ? "text" : "password";
+
+    passwordField.setAttribute('type', type);
+
+    togglePassword.classList.toggle('bi-eye');
+  });
+</script>
 @endsection
 
 

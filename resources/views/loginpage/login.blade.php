@@ -56,7 +56,7 @@
     outline: none;
     background: rgba(255, 255, 255, 0.5);
     transition: .3s ease-in-out;
-    padding-left:10px;
+    padding-left:15px;
     color: white;
   }
 
@@ -145,12 +145,6 @@
                 <a href="#!" class="text-white">Forgot Password</a>
               </div>
             </div>
-
-            <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
-              <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-              <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-              <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-            </div> -->
           </form>
 
           <div>
