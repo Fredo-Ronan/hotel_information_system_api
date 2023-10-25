@@ -314,7 +314,7 @@ Route::get('/addroom', function () {
     return view('adminpage/addroom');
 });
 
-Route::get('/listBoking', function () {
+Route::get('/listbooking', function () {
     return view('bookingpage/listBoking');
 });
 

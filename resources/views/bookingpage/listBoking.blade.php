@@ -1,10 +1,15 @@
 @extends('../maintemplate')
 
+@section('brand')
+<a class="navbar-brand" href="{{ url('/loggedIn') }}">The <span>5 Stars</span> Hotel</a>
+@endsection
+
 @section('nav')
     <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a href="{{ url('/loggedIn') }}" class="nav-link">Home</a></li>
         <li class="nav-item active"><a href="{{ url('/roomsLoggedIn') }}" class="nav-link">Our Rooms</a></li>
         <li class="nav-item"><a href="{{ url('/blogLoggedIn') }}" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="{{ url('/listbooking') }}" class="nav-link">Booking</a></li>
         <li class="nav-item"><a href="{{ url('/contactLoggedIn') }}" class="nav-link">Contact</a></li>
     </ul>
 @endsection

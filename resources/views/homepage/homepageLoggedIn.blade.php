@@ -9,7 +9,7 @@
     <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
     <li class="nav-item"><a href="{{ url('/roomsLoggedIn') }}" class="nav-link">Our Rooms</a></li>
     <li class="nav-item"><a href="{{ url('/blogLoggedIn') }}" class="nav-link">Blog</a></li>
-    <li class="nav-item"><a href="{{ url('/listBoking') }}" class="nav-link">Booking</a></li>
+    <li class="nav-item"><a href="{{ url('/listbooking') }}" class="nav-link">Booking</a></li>
     <li class="nav-item"><a href="{{ url('/contactLoggedIn') }}" class="nav-link">Contact</a></li>
 </ul>
 @endsection

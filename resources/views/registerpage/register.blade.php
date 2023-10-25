@@ -119,6 +119,10 @@
   }
 </style>
 
+@section('brand')
+<a class="navbar-brand" href="{{ url('/loggedIn') }}">The <span>5 Stars</span> Hotel</a>
+@endsection
+
 @section('nav')
 <ul class="navbar-nav ml-auto">
     <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>

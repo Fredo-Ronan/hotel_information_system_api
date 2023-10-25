@@ -1,5 +1,9 @@
 @extends('../maintemplate')
 
+@section('brand')
+<a class="navbar-brand" href="{{ url('/loggedIn') }}">The <span>5 Stars</span> Hotel</a>
+@endsection
+
 @section('admin-style')
 <link href="{{ asset('css/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
 <link href="{{ asset('css/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
@@ -157,6 +161,7 @@
                     <th>check out</th>
                     <th>total</th>
                     <th>status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
