@@ -8,6 +8,8 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"/> -->
 
 	<link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -27,6 +29,7 @@
 	<link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	@yield('body-style')
+	@yield('admin-style')
 
 	<style>
 
@@ -67,7 +70,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<a class="navbar-brand" href="{{ url('/') }}">The <span>5 Stars</span> Hotel</a>
+		@yield('brand')
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 			aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="oi oi-menu"></span> Menu
@@ -78,12 +81,7 @@
 		</div>
 
 		<div class="login-signup-btn-container">
-			<a href="{{ url('/login') }}">
-				<button class="btn btn-light" style="border-radius: 10px;">Login</button>
-			</a>
-			<a href="{{ url('signup') }}">
-				<button class="btn btn-success" style="border-radius: 10px;">Sign Up</button>
-			</a>
+			@yield('login-register-btn')
 		</div>
 	</nav>
 	<!-- END nav -->
@@ -95,9 +93,13 @@
 		@yield('contact-content')
 		@yield('blog-content')
 		@yield('room-detail')
+		@yield('detail')
 		@yield('register')
 		@yield('login')
 		@yield('booking')
+		@yield('admin')
+		@yield('addroom')
+		@yield('editroom')
 	</div>
 
 	<footer class="ftco-footer ftco-section img" style="background-image: url(images/bg_4.jpg);">
@@ -171,6 +173,7 @@
 				stroke="#F96D00" /></svg>
 	</div>
 
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
 	<script src="{{ asset('js/popper.min.js') }}"></script>
@@ -187,7 +190,13 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="{{ asset('js/google-map.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
+	<script>
+		$(document).ready(function(){
+		$('[data-toggle="popover"]').popover();
+		});
+	</script>
 
+	@yield('script-admin')
 </body>
 
 </html>

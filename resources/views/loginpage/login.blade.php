@@ -56,7 +56,7 @@
     outline: none;
     background: rgba(255, 255, 255, 0.5);
     transition: .3s ease-in-out;
-    padding-left:15px;
+    padding-left:20px;
     color: white;
   }
 
@@ -96,11 +96,18 @@
 <ul class="navbar-nav ml-auto">
     <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
     <li class="nav-item"><a href="{{ url('/rooms') }}" class="nav-link">Our Rooms</a></li>
-    <li class="nav-item"><a href="{{ url('/restaurant') }}" class="nav-link">Restaurant</a></li>
-    <li class="nav-item"><a href="{{ url('/about') }}" class="nav-link">About Us</a></li>
     <li class="nav-item"><a href="{{ url('/blog') }}" class="nav-link">Blog</a></li>
     <li class="nav-item"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
 </ul>
+@endsection
+
+@section('login-register-btn')
+<a href="{{ url('/login') }}">
+    <button class="btn btn-light" style="border-radius: 10px;">Login</button>
+</a>
+<a href="{{ url('signup') }}">
+    <button class="btn btn-success" style="border-radius: 10px;">Sign Up</button>
+</a>
 @endsection
 
 @section('body-style')
@@ -124,7 +131,7 @@
 
           <form action="#" class="signin-form">
             <div class="form-group">
-              <input type="text" class="form-ngisi" placeholder="Email" required>
+              <input id="email-field" type="text" class="form-ngisi" placeholder="Email" required>
             </div>
 
             <div class="form-group">
@@ -132,9 +139,9 @@
               <i toggle="#password-field" class="bi bi-eye-slash toggle-password" id="eye-toggle-password"></i>
             </div>
 
-            <button class="customm-button" type="submit">Login</button>
+            <button class="customm-button" type="submit" id="login-btn">Login</button>
 
-            <div class="form-group" style="display: flex; justify-content: space-between;">
+            <div class="form-group" style="display: flex; justify-content: space-between; margin-top: 1.5rem;">
               <div class="">
                 <label class="checkbox-wrap checkbox-primary text-white">Remember Me
                   <input type="checkbox">
@@ -142,7 +149,7 @@
                 </label>
               </div>
               <div class="text-md-right">
-                <a href="#!" class="text-white">Forgot Password</a>
+                <a href="#!" class="text-white" id="forgot">Forgot Password</a>
               </div>
             </div>
           </form>
@@ -183,6 +190,30 @@
     passwordField.setAttribute('type', type);
 
     togglePassword.classList.toggle('bi-eye');
+  });
+
+  const loginBtn = document.getElementById('login-btn');
+  const forgot = document.getElementById('forgot');
+
+  loginBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email-field');
+    const password = document.getElementById('password-field');
+
+    if(email.value === 'admin' && password.value === 'admin5stars'){
+      window.location.href = '/admin';
+    } else if(email.value === 'user 1' && password.value === 'user1') {
+      window.location.href = '/loggedIn';
+    } else {
+      alert('Email atau Password Salah!'); 
+    }
+  });
+
+  forgot.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    alert('Admin Login: \nEmail = admin\nPassword = admin5stars\n\nUser Login: \nEmail = user 1\nPassword = user1')
   });
 </script>
 @endsection

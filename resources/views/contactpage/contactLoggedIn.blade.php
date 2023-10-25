@@ -1,21 +1,59 @@
 @extends('maintemplate')
 
+@section('brand')
+<a class="navbar-brand" href="{{ url('/loggedIn') }}">The <span>5 Stars</span> Hotel</a>
+@endsection
+
 @section('nav')
 <ul class="navbar-nav ml-auto">
-    <li class="nav-item"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-    <li class="nav-item"><a href="{{ url('/rooms') }}" class="nav-link">Our Rooms</a></li>
-    <li class="nav-item"><a href="{{ url('/blog') }}" class="nav-link">Blog</a></li>
-    <li class="nav-item active"><a href="{{ url('/contact') }}" class="nav-link">Contact</a></li>
+    <li class="nav-item"><a href="{{ url('/loggedIn') }}" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="{{ url('/roomsLoggedIn') }}" class="nav-link">Our Rooms</a></li>
+    <li class="nav-item"><a href="{{ url('/blogLoggedIn') }}" class="nav-link">Blog</a></li>
+    <li class="nav-item active"><a href="{{ url('/contactLoggedIn') }}" class="nav-link">Contact</a></li>
 </ul>
 @endsection
 
 @section('login-register-btn')
-<a href="{{ url('/login') }}">
-    <button class="btn btn-light" style="border-radius: 10px;">Login</button>
-</a>
-<a href="{{ url('signup') }}">
-    <button class="btn btn-success" style="border-radius: 10px;">Sign Up</button>
-</a>
+<style>
+    .user-btn {
+        display: flex; 
+        gap: 1rem; 
+        background-color: #21cc7a;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+
+    .user-btn:hover {
+        cursor: pointer;
+        background-color: #19a864;
+    }
+
+    .popover-body {
+        color: red;
+        font-weight: bold;
+    }
+
+    .popover-body:hover {
+        cursor: pointer;
+    }
+</style>
+
+<div class="user-btn" data-toggle="popover" data-placement="bottom" data-content="Logout" data-trigger="hover">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FFFFFF" class="bi bi-person-circle"
+        viewBox="0 0 32 32">
+        <path d="M 22 12 a 6 6 90 1 1 -12 0 a 6 6 90 0 1 12 0 z" />
+        <path fill-rule="evenodd"
+            d="M 0 16 a 16 16 90 1 1 32 0 A 16 16 90 0 1 0 16 z m 16 -14 a 14 14 90 0 0 -10.936 22.74 C 6.484 22.452 9.61 20 16 20 s 9.514 2.45 10.936 4.74 A 14 14 90 0 0 16 2 z" />
+    </svg>
+    <div>
+        <h5 style="color: white; margin: 0;">User 1</h5>
+    </div>
+</div>
 @endsection
 
 @section('contact-content')
@@ -93,4 +131,12 @@
         </div>
     </div>
 </section>
+<script>
+    const userBtn = document.querySelector('.user-btn');
+    
+    userBtn.addEventListener('click', () => {
+        window.location.href = '/login';
+    });
+
+</script>
 @endsection
