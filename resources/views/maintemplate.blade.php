@@ -100,6 +100,7 @@
 		@yield('admin')
 		@yield('addroom')
 		@yield('editroom')
+		@yield('booking-success')
 	</div>
 
 	<footer class="ftco-footer ftco-section img" style="background-image: url(images/bg_4.jpg);">

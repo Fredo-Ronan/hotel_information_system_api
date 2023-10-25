@@ -218,9 +218,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" >Close</button> 
-                    <button type="button" class="btn btn-secondary" style="border-radius: 5px;"
-                    >Selesai</button>
+                    <a type="button" class="btn btn-secondary"  href="{{ url('/loggedIn') }}"style="border-radius: 5px;"
+                    >Selesai</a>
             </div>
         </div>
     </div>

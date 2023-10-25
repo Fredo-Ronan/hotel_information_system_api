@@ -314,6 +314,10 @@ Route::get('/addroom', function () {
     return view('adminpage/addroom');
 });
 
+Route::get('/listBoking', function () {
+    return view('bookingpage/listBoking');
+});
+
 Route::get('/userdata', function () {
     return view('adminpage/userdata', [
         'list_user' => [
