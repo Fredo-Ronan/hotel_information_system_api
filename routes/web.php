@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("/mail", function (){
+    return view("mailTemplate");
+});
+
 Route::get('/', function () {
     return view('homepage/homepage', [
         'highlighted_rooms' => [
