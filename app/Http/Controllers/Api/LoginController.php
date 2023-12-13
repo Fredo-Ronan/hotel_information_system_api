@@ -20,9 +20,14 @@ class LoginController extends Controller
                 $user = Auth::user();
 
                 if($user->active){
+
+                    $token = $user->createToken("Authentication Token")->accessToken;
+
                     return response()->json([
                         "status"=> "success",
                         "message"=> "Authenticated",
+                        "token" => $token,
+                        "token_type" => 'Bearer',
                         "data" => $user,
                     ], 200);
                 } else {
