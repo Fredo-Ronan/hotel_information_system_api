@@ -45,7 +45,7 @@ class RegisterController extends Controller
                 "username" => $registerData["username"],
                 "website" => "The 5 Stars Hotel",
                 "tanggal_register" => date("Y-m-d H:i:s"),
-                "url" => request()->getHttpHost() . '/api/register/verify/' . $str,
+                "url" => request()->getHttpHost() . '/api/api/register/verify/' . $str,
             ];
     
             Mail::to($registerData['email'])->send(new MailSend($details));
