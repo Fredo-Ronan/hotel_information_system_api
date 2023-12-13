@@ -22,7 +22,7 @@ jobs:
       run: composer install
 
     - name: Run passport:install
-      run: php artisan passport:install
+      run: php artisan passport:install --force
 
     - name: Deploy to Vercel
       run: vercel --prod
