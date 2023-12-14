@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\MailSend;
 
-use function PHPSTORM_META\registerArgumentsSet;
-
 class RegisterController extends Controller
 {
     public function register(Request $request){
@@ -48,7 +46,7 @@ class RegisterController extends Controller
                 "username" => $registerData["username"],
                 "website" => "The 5 Stars Hotel",
                 "tanggal_register" => date("Y-m-d H:i:s"),
-                "url" => 'https://tubes-hotel-15-frontend.vercel.app/verify?key=' . $str,
+                "url" => request()->getHttpHost() . '/api/api/register/verify/' . $str,
             ];
     
             Mail::to($registerData['email'])->send(new MailSend($details));
@@ -78,10 +76,9 @@ class RegisterController extends Controller
 
         $user = User::where("verify_key", $verify_key)->update(["active" => 1, "email_verified_at" => date("Y-m-d H:i:s")]);
 
-        return response()->json([
-            "status"=> "success",
-            "message"=> "Berhasil Verifikasi Akun Anda | Akun Anda sudah aktif",
-            "data"=> $user,
-        ], 200);
+        $delay = 5;
+        $url = 'https://tubes-hotel-15-frontend.vercel.app/';
+
+        return view('verifyOK', compact('url', 'delay'));
     }
 }
