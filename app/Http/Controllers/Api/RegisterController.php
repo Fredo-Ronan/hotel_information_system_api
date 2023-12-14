@@ -79,6 +79,6 @@ class RegisterController extends Controller
         $delay = 5;
         $url = 'https://tubes-hotel-15-frontend.vercel.app/';
 
-        return view('verifyOK', compact('url', 'delay'));
+        return view('verifyOk', compact('url', 'delay'));
     }
 }
