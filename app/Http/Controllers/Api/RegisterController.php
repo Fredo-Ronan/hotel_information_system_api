@@ -68,10 +68,7 @@ class RegisterController extends Controller
         $keyCheck = User::select("verify_key")->where("verify_key", $verify_key)->exists();
 
         if(!$keyCheck){
-            return response()->json([
-                "status"=> "fail",
-                "message"=> "Not a Valid Verifcation Key"
-            ], 403);
+            return view("verifyFail");
         }
 
         $user = User::where("verify_key", $verify_key)->update(["active" => 1, "email_verified_at" => date("Y-m-d H:i:s")]);

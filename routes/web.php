@@ -17,6 +17,14 @@ Route::get("/mail", function (){
     return view("mailTemplate");
 });
 
+Route::get("/fail", function() {
+    return view("verifyFail");
+});
+
+Route::get("/success", function() {
+    return view("verifyOk");
+});
+
 Route::get('/', function () {
     return view('homepage/homepage', [
         'highlighted_rooms' => [
