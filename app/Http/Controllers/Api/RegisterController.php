@@ -48,7 +48,7 @@ class RegisterController extends Controller
                 "username" => $registerData["username"],
                 "website" => "The 5 Stars Hotel",
                 "tanggal_register" => date("Y-m-d H:i:s"),
-                "url" => 'https://tubes-hotel-15-frontend.vercel.app/verify/' . $str,
+                "url" => 'https://tubes-hotel-15-frontend.vercel.app/verify?key=' . $str,
             ];
     
             Mail::to($registerData['email'])->send(new MailSend($details));
