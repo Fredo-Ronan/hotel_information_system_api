@@ -27,7 +27,7 @@
         <div class="text-start">
             <!-- Greetings -->
             <div class="mt-4" style="margin-left: 2rem;">
-                <h2>Halo <strong>User 1!</strong></h2>
+                <h2>Halo <strong>{{ $details['firstname'] }}</strong></h2>
             </div>
 
             <!-- What's going on? -->

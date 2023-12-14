@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\MailSend;
 
+use function PHPSTORM_META\registerArgumentsSet;
+
 class RegisterController extends Controller
 {
     public function register(Request $request){
@@ -42,6 +44,7 @@ class RegisterController extends Controller
             $user = User::create($registerData);
     
             $details = [
+                "firstname" => $registerData["firstname"],
                 "username" => $registerData["username"],
                 "website" => "The 5 Stars Hotel",
                 "tanggal_register" => date("Y-m-d H:i:s"),
