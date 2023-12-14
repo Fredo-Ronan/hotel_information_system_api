@@ -45,14 +45,14 @@ class RegisterController extends Controller
                 "username" => $registerData["username"],
                 "website" => "The 5 Stars Hotel",
                 "tanggal_register" => date("Y-m-d H:i:s"),
-                "url" => request()->getHttpHost() . '/api/api/register/verify/' . $str,
+                "url" => 'https://tubes-hotel-15-frontend.vercel.app/verify/' . $str,
             ];
     
             Mail::to($registerData['email'])->send(new MailSend($details));
 
             return response()->json([
                 'status'=> 'success',
-                'message'=> 'Link Verifikasi telah dikirim ke email anda. Silahkan cek email anda untuk mengaktifkan akun anda',
+                'message'=> 'Register Success',
                 'data' => $user,
             ], 200);
         } catch (\Exception $e) {
