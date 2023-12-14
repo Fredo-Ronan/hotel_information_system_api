@@ -26,7 +26,7 @@
         <br>
         <h4>Anda akan diarahkan ke halaman login dalam {{ $delay }} detik...</h4>
         <br><br>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="width: 400px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" style="width: 100px;">
             <circle fill="#19D600" stroke="#19D600" stroke-width="15" r="15" cx="40" cy="65">
                 <animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
                     keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
