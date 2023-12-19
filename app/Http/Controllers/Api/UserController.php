@@ -80,7 +80,7 @@ class UserController extends Controller
             $imageData = $request->all();
     
             $validate = Validator::make($imageData, [
-                "image" => "required|image:jpeg,png,jpg,gif,svg|max:2048",
+                "image" => "required|image:jpeg,png,jpg|max:2048",
             ]);
     
             if($validate->fails()){

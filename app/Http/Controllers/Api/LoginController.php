@@ -30,7 +30,7 @@ class LoginController extends Controller
                         'email'=> $user->email,
                         'no_telp'=> $user->no_telp,
                         'username'=> $user->username,
-                        'profile_img' => base64_encode($user->profile_img),
+                        'profile_img' => "data:image/" . $user->img_ext . ";base64," . base64_encode($user->profile_img),
                         'verify_key' => $user->verify_key,
                         'active' => $user->active,
                         'created_at' => $user->created_at,
