@@ -56,15 +56,11 @@ class UserController extends Controller
             }
 
             $profileImage = $request->file("image");
-
-            $imageName = time() . '.' . $profileImage->extension();
-
-            $profileImage->move(public_path('profile_images'), $imageName);
-            $uploadedResponse = asset('profile_images/'. $imageName);
+            $imageBinData = file_get_contents($profileImage->getRealPath());
 
             $userToUpdate = User::findOrfail($id);
 
-            $userToUpdate->update(["profile_img" => $uploadedResponse]);
+            $userToUpdate->update(["profile_img" => $imageBinData]);
 
             return response()->json([
                 "status"=> "success",
