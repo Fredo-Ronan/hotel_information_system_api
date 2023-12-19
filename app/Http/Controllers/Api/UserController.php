@@ -55,10 +55,12 @@ class UserController extends Controller
                 ], 400);
             }
 
-            $uploadFolder = "profile_images";
             $profileImage = $request->file("image");
-            $image_upload_path = $profileImage->store($uploadFolder, 'public');
-            $uploadedResponse = basename($image_upload_path);
+
+            $imageName = time() . '.' . $profileImage->extension();
+
+            $profileImage->move(public_path('profile_images'), $imageName);
+            $uploadedResponse = asset('profile_images/'. $imageName);
 
             $userToUpdate = User::findOrfail($id);
 
