@@ -23,12 +23,27 @@ class LoginController extends Controller
 
                     $token = $user->createToken("Authentication Token")->accessToken;
 
+                    $userDataResponse = [
+                        'id' => $user->id,
+                        'firstname' => $user->firstname,
+                        'lastname' => $user->lastname,
+                        'email'=> $user->email,
+                        'no_telp'=> $user->no_telp,
+                        'username'=> $user->username,
+                        'profile_img' => base64_encode($user->profile_img),
+                        'verify_key' => $user->verify_key,
+                        'active' => $user->active,
+                        'created_at' => $user->created_at,
+                        'updated_at'=> $user->updated_at,
+                        'email_verified_at' => $user->email_verified_at,
+                    ];
+
                     return response()->json([
                         "status"=> "success",
                         "message"=> "Authenticated",
                         "token" => $token,
                         "token_type" => 'Bearer',
-                        "data" => $user,
+                        "data" => $userDataResponse,
                     ], 200);
                 } else {
                     Auth::logout();

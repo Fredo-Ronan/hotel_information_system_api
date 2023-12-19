@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password',
         'verify_key',
         'profile_img',
+        'img_ext',
         'active',
     ];
 

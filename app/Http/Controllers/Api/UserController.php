@@ -91,11 +91,15 @@ class UserController extends Controller
             }
 
             $profileImage = $request->file("image");
+            $imgExt = $profileImage->getClientOriginalExtension();
             $imageBinData = file_get_contents($profileImage->getRealPath());
 
             $userToUpdate = User::findOrfail($id);
 
-            $userToUpdate->update(["profile_img" => $imageBinData]);
+            $userToUpdate->update([
+                "profile_img" => $imageBinData,
+                "img_ext" => $imgExt,
+            ]);
 
             return response()->json([
                 "status"=> "success",
