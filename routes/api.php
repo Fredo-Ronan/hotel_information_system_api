@@ -25,8 +25,8 @@ Route::post('login', [App\Http\Controllers\Api\LoginController::class, 'login'])
 Route::get('logout', [App\Http\Controllers\Api\LoginController::class,'logout'])->name('logout');
 
 Route::middleware('auth:api')->group(function() {
-    Route::put("/updateProfileData/{id}", [App\Http\Controllers\Api\UserController::class, "updateDataProfil"])->name("updateDataProfil");
-    Route::put("/updateProfilePhoto/{id}", [App\Http\Controllers\Api\UserController::class, "updateFotoProfil"])->name("updateFotoProfil");
+    Route::post("/updateProfileData/{id}", [App\Http\Controllers\Api\UserController::class, "updateDataProfil"])->name("updateDataProfil");
+    Route::post("/updateProfilePhoto/{id}", [App\Http\Controllers\Api\UserController::class, "updateFotoProfil"])->name("updateFotoProfil");
 
     Route::get('kamar', [App\Http\Controllers\Api\KamarController::class,'index'])->name('index');
 });
