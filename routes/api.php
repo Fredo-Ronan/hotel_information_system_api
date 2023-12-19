@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::get('kamar', [App\Http\Controllers\Api\KamarController::class,'index'])->name('index');
 Route::post('register', [App\Http\Controllers\Api\RegisterController::class,'register'])->name('register');
 Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
 Route::post('login', [App\Http\Controllers\Api\LoginController::class, 'login'])->name('login');
 Route::get('logout', [App\Http\Controllers\Api\LoginController::class,'logout'])->name('logout');
+
+Route::middleware('auth:api')->group(function() {
+    Route::put("/updateProfileData/{id}", [App\Http\Controllers\Api\UserController::class, "updateDataProfil"])->name("updateDataProfil");
+    Route::put("/updateProfilePhoto/{id}", [App\Http\Controllers\Api\UserController::class, "updateFotoProfil"])->name("updateFotoProfil");
+});

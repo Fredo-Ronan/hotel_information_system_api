@@ -38,6 +38,7 @@ class RegisterController extends Controller
     
             $registerData["password"] = Hash::make($registerData["password"]);
             $registerData["verify_key"] = $str;
+            $registerData["profile_img"] = "";
     
             $user = User::create($registerData);
     
