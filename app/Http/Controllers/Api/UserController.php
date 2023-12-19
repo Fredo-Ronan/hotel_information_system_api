@@ -28,9 +28,44 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        try {
+            $user = User::find($id);
+
+            if($user) {
+                $userDataResponse = [
+                    'id' => $user->id,
+                    'firstname' => $user->firstname,
+                    'lastname' => $user->lastname,
+                    'email'=> $user->email,
+                    'no_telp'=> $user->no_telp,
+                    'username'=> $user->username,
+                    'profile_img' => base64_encode($user->profile_img),
+                    'verify_key' => $user->verify_key,
+                    'active' => $user->active,
+                    'created_at' => $user->created_at,
+                    'updated_at'=> $user->updated_at,
+                    'email_verified_at' => $user->email_verified_at,
+                ];
+
+                return response()->json([
+                    "status" => "success",
+                    "message"=> "Berhasil Mengambil Data User ID " . $id,
+                    "data"=> $userDataResponse,
+                ], 200);
+            }
+
+            return response()->json([
+                "status"=> "fail",
+                "message"=> "No User Found",
+            ], 400);
+        } catch (\Exception $e) {
+            return response()->json([
+                "status" => "error",
+                "error"=> $e->getMessage()
+            ], 400);
+        }
     }
 
     /**
