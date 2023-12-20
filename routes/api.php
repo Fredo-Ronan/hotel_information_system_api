@@ -33,10 +33,16 @@ Route::delete('/room/{id}', [App\Http\Controllers\Api\KamarController::class, 'd
 // Route Admin Kelola User
 Route::get('/user', [App\Http\Controllers\Api\UserController::class, 'index'])->name('index');
 
+//Route Admin Kelola Booking
+Route::get('/booking', [App\Http\Controllers\Api\BookingController::class, 'index'])->name('index');
+
 Route::middleware('auth:api')->group(function() {
     Route::post("/updateProfileData/{id}", [App\Http\Controllers\Api\UserController::class, "updateDataProfil"])->name("updateDataProfil");
     Route::post("/updateProfilePhoto/{id}", [App\Http\Controllers\Api\UserController::class, "updateFotoProfil"])->name("updateFotoProfil");
     Route::get("/getUserData/{id}", [App\Http\Controllers\Api\UserController::class, "show"])->name("show");
 
     Route::get('kamar', [App\Http\Controllers\Api\KamarController::class,'index'])->name('index');
+
+    Route::post("/booking", [App\Http\Controllers\Api\BookingController::class, "store"])->name("store");
+    Route::get("/mybooking/{id}", [App\Http\Controllers\Api\BookingController::class, "show"])->name("show");
 });

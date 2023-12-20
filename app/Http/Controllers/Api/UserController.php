@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::select("firstname", "lastname", "email", "no_telp", "username", "active")->get();
 
         if(is_null($users)) {
             return response()->json([

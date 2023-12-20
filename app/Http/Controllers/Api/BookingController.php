@@ -16,7 +16,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookingData = Booking::all();
+        $bookingData = Booking::join('kamars', 'bookings.id_kamar', '=', 'kamars.id')->select('bookings.*', 'kamars.*')->get();
 
         if(is_null($bookingData)) {
             return response()->json([
@@ -93,7 +93,8 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        $bookingDataCertainUser = Booking::where("id_user", $id)->get();
+        $bookingDataCertainUser = Booking::join("kamars", "bookings.id_kamar", "=", "kamars.id")->where("bookings.id_user", $id)
+                                            ->select("bookings.*", "kamars.*")->get();
 
         if(is_null($bookingDataCertainUser)){
             return response()->json([
