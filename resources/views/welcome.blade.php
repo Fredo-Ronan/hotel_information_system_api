@@ -12,7 +12,7 @@
         <p>Website ini hanya sebagai API untuk frontend React Tugas Besar Matakuliah Pemrograman Web</p>
         <p>
             Berikut adalah link frontend nya
-            <a href="https://tubes-hotel-15-frontend.vercel.app/">https://tubes-hotel-15-frontend.vercel.app/</a>
+            <a href="https://the5stars-hotel.vercel.app/">https://the5stars-hotel.vercel.app/</a>
         </p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
