@@ -32,6 +32,7 @@ Route::delete('/room/{id}', [App\Http\Controllers\Api\KamarController::class, 'd
 
 // Route Admin Kelola User
 Route::get('/user', [App\Http\Controllers\Api\UserController::class, 'index'])->name('index');
+Route::delete('/user/{id}', [App\Http\Controllers\Api\UserController::class, 'destroy'])->name('destroy');
 
 //Route Admin Kelola Booking
 Route::get('/booking', [App\Http\Controllers\Api\BookingController::class, 'index'])->name('index');
