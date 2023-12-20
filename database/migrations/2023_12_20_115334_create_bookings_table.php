@@ -23,8 +23,8 @@ return new class extends Migration
             $table->integer('total_harga');
             $table->timestamps();
 
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_kamar')->references('id')->on('kamars');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_kamar')->references('id')->on('kamars')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
