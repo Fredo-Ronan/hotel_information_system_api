@@ -14,7 +14,20 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        if(is_null($users)) {
+            return response()->json([
+                "status"=> "empty",
+                "message"=> "Data Pengguna Masih Kosong",
+            ], 200);
+        }
+
+        return response()->json([
+            "status"=> "success",
+            "message"=> "Berhasil Mengambil Data Pengguna",
+            "data" => $users,
+        ], 200);
     }
 
     /**

@@ -24,6 +24,15 @@ Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterCon
 Route::post('login', [App\Http\Controllers\Api\LoginController::class, 'login'])->name('login');
 Route::get('logout', [App\Http\Controllers\Api\LoginController::class,'logout'])->name('logout');
 
+// Route Admin Kelola Kamar
+Route::get('/room', [App\Http\Controllers\Api\KamarController::class, 'index'])->name('index');
+Route::post('/room', [App\Http\Controllers\Api\KamarController::class , 'store'])->name('store');
+Route::post('/room/{id}', [App\Http\Controllers\Api\KamarController::class, 'update'])->name('update');
+Route::delete('/room/{id}', [App\Http\Controllers\Api\KamarController::class, 'destroy'])->name('destroy');
+
+// Route Admin Kelola User
+Route::get('/user', [App\Http\Controllers\Api\UserController::class, 'index'])->name('index');
+
 Route::middleware('auth:api')->group(function() {
     Route::post("/updateProfileData/{id}", [App\Http\Controllers\Api\UserController::class, "updateDataProfil"])->name("updateDataProfil");
     Route::post("/updateProfilePhoto/{id}", [App\Http\Controllers\Api\UserController::class, "updateFotoProfil"])->name("updateFotoProfil");

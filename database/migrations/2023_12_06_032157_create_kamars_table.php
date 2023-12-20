@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('kamars', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kamar');
-            $table->string('tipe_kamar');
+            $table->string('deskripsi');
+            $table->integer('max');
+            $table->integer('tersedia');
+            $table->integer('harga');
             $table->timestamps();
         });
     }
