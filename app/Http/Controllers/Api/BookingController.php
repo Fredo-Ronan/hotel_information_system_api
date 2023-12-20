@@ -24,7 +24,7 @@ class BookingController extends Controller
                             'bookings.check_out', 
                             'bookings.total_harga', 
                             'kamars.nama_kamar',
-                            'kamars.id_kamar')->get();
+                            'kamars.id as id_kamar')->get();
 
         if(is_null($bookingData)) {
             return response()->json([
