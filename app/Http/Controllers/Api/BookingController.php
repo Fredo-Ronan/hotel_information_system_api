@@ -16,7 +16,15 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $bookingData = Booking::join('kamars', 'bookings.id_kamar', '=', 'kamars.id')->select('bookings.*', 'kamars.*')->get();
+        $bookingData = Booking::join('kamars', 'bookings.id_kamar', '=', 'kamars.id')->select(
+                            'bookings.id',
+                            'bookings.nama_pemesan',
+                            'bookings.jumlah_tamu',
+                            'bookings.check_in',
+                            'bookings.check_out', 
+                            'bookings.total_harga', 
+                            'kamars.nama_kamar',
+                            'kamars.id_kamar')->get();
 
         if(is_null($bookingData)) {
             return response()->json([
@@ -75,6 +83,9 @@ class BookingController extends Controller
 
             Booking::create($bookingData);
 
+            $tersedia = $findKamar->tersedia - 1;
+            Kamar::where("id", $findKamar->id)->update(["tersedia" => $tersedia]);
+
             return response()->json([
                 "status"=> "success",
                 "message"=> "Berhasil Memasukkan Data Booking",
@@ -121,8 +132,42 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        try {
+            $findBooking = Booking::find($id);
+    
+            if(is_null($findBooking)){
+                return response()->json([
+                    "status"=> "fail",
+                    "message"=> "Data Booking Tidak Ditemukan",
+                ], 400);
+            }
+
+            $findKamar = Kamar::where("id", $findBooking->id_kamar)->first();
+
+            if(is_null($findKamar)){
+                return response()->json([
+                    "status"=> "fail",
+                    "message"=> "Data Kamar Tidak Ditemukan",
+                ], 400);
+            }
+
+            $tersedia = $findKamar->tersedia + 1;
+
+            $findKamar->update(["tersedia" => $tersedia]);
+
+            $findBooking->delete();
+
+            return response()->json([
+                "status"=> "success",
+                "message"=> "Berhasil Hapus Booking",
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                "status"=> "error",
+                "message"=> $e->getMessage(),
+            ], 400);
+        }
     }
 }

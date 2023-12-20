@@ -36,6 +36,7 @@ Route::delete('/user/{id}', [App\Http\Controllers\Api\UserController::class, 'de
 
 //Route Admin Kelola Booking
 Route::get('/booking', [App\Http\Controllers\Api\BookingController::class, 'index'])->name('index');
+Route::delete('/booking/{id}', [App\Http\Controllers\Api\BookingController::class, 'destroy'])->name('destroy');
 
 Route::middleware('auth:api')->group(function() {
     Route::post("/updateProfileData/{id}", [App\Http\Controllers\Api\UserController::class, "updateDataProfil"])->name("updateDataProfil");
