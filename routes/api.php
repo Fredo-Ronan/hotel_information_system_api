@@ -41,7 +41,7 @@ Route::middleware('auth:api')->group(function() {
     Route::post("/updateProfilePhoto/{id}", [App\Http\Controllers\Api\UserController::class, "updateFotoProfil"])->name("updateFotoProfil");
     Route::get("/getUserData/{id}", [App\Http\Controllers\Api\UserController::class, "show"])->name("show");
 
-    Route::get('kamar', [App\Http\Controllers\Api\KamarController::class,'index'])->name('index');
+    Route::get('kamar', [App\Http\Controllers\Api\KamarController::class, 'index'])->name('index');
 
     Route::post("/booking", [App\Http\Controllers\Api\BookingController::class, "store"])->name("store");
     Route::get("/mybooking/{id}", [App\Http\Controllers\Api\BookingController::class, "show"])->name("show");
