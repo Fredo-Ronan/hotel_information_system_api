@@ -76,7 +76,7 @@ class RegisterController extends Controller
         $user = User::where("verify_key", $verify_key)->update(["active" => 1, "email_verified_at" => date("Y-m-d H:i:s")]);
 
         $delay = 5;
-        $url = 'https://tubes-hotel-15-frontend.vercel.app/';
+        $url = 'https://the5stars-hotel.vercel.app/';
 
         return view('verifyOk', compact('url', 'delay'));
     }
