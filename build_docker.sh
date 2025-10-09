@@ -9,5 +9,7 @@ sudo docker compose exec app chmod -R 777 storage bootstrap/cache
 # Generate application key
 sudo docker compose exec app php artisan key:generate
 
+echo ""
+echo ""
 echo "Docker containers are up and running."
-echo "Please run 'sudo docker compose exec app php artisan migrate' or run 'migrate.sh' to set up the database."
+echo "IMPORTANT! Please run 'sudo docker compose exec app php artisan migrate' or run 'migrate.sh' to set up the database."
