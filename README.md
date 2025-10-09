@@ -1,4 +1,4 @@
-# Hotel Information System | UAS Pemrograman Web Gasal 2023/2024
+# Hotel Information System API | UAS Pemrograman Web Gasal 2023/2024
 
 ## Kelas B Kelompok 15
 
