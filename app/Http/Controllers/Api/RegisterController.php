@@ -48,7 +48,8 @@ class RegisterController extends Controller
                 "username" => $registerData["username"],
                 "website" => "The 5 Stars Hotel",
                 "tanggal_register" => date("Y-m-d H:i:s"),
-                "url" => request()->getHttpHost() . '/api/api/register/verify/' . $str,
+                // "url" => request()->getHttpHost() . '/api/register/verify/' . $str,
+                "url" => 'https://his-api.fredoronan.web.id/api/register/verify/' . $str,
             ];
     
             Mail::to($registerData['email'])->send(new MailSend($details));
@@ -76,7 +77,7 @@ class RegisterController extends Controller
         $user = User::where("verify_key", $verify_key)->update(["active" => 1, "email_verified_at" => date("Y-m-d H:i:s")]);
 
         $delay = 5;
-        $url = 'https://the5stars-hotel.vercel.app/'; // must be changed to real URL when deployed
+        $url = 'https://his.fredoronan.web.id'; // must be changed to real URL when deployed
 
         return view('verifyOk', compact('url', 'delay'));
     }

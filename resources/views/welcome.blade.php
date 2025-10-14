@@ -12,7 +12,7 @@
         <p>Website ini hanya sebagai API untuk frontend React Tugas Besar Matakuliah Pemrograman Web</p>
         <p>
             Frontend dapat di akses di
-            <a href="https://the5stars-hotel.vercel.app/">https://the5stars-hotel.vercel.app/</a>
+            <a href="https://his.fredoronan.web.id">https://his.fredoronan.web.id/</a>
         </p>
         <p>
             Dokumentasi route api bisa di lihat 
