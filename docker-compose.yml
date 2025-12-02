@@ -4,6 +4,11 @@ services:
   his_api:
     build: .
     container_name: hotel_information_system_api
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5" # 0.5 cores
+          memory: 512M # 512 MB of RAM
     restart: unless-stopped
     environment:
       DB_CONNECTION: mysql
