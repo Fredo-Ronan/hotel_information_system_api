@@ -1,4 +1,4 @@
-sudo docker compose exec app php artisan passport:install
+sudo docker compose exec his_api php artisan passport:install
 
 echo ""
 echo ""
