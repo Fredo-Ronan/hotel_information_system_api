@@ -4,10 +4,10 @@
 sudo docker compose up -d --build
 
 # Set permissions for storage and cache directories
-sudo docker compose exec app chmod -R 777 storage bootstrap/cache
+sudo docker compose exec his_api chmod -R 777 storage bootstrap/cache
 
 # Generate application key
-sudo docker compose exec app php artisan key:generate
+sudo docker compose exec his_api php artisan key:generate
 
 echo ""
 echo ""
