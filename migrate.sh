@@ -1,5 +1,5 @@
 # Run migrations
-sudo docker compose exec app php artisan migrate
+sudo docker compose exec his_api php artisan migrate
 
 echo ""
 echo ""
