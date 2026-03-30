@@ -1,5 +1,13 @@
 # Hotel Information System API | UAS Pemrograman Web Gasal 2023/2024
 
+### A bit of story behind this project 🧐
+This project is one of my college big assignment to make a Full Stack Hotel Information System and this repo is the backend side of the whole system. You can check the frontend at https://github.com/Fredo-Ronan/hotel_information_system.<br> 
+
+This backend side is built using Laravel + MySQL database and it's dockerized so that this project can be deployed on any machine easily. You can access this backend at https://his-api.fredoronan.web.id/ but there is nothing to see there :)
+<br>
+
+> _Below is just details that important when i submit the assignment to the lecturer, so you can ignore those :)_ 
+
 ## Kelas B Kelompok 15
 
 ## Anggota Kelompok:
